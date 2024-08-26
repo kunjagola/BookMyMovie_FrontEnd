@@ -165,7 +165,10 @@ export class MovieDetailComponent {
             // Process the form data (e.g., send to server)
           }
         });
-      } else {
+      }else if(response.success == false){
+        alert("Seats Are Alredy Booked , Please select Another seat");
+      } 
+      else {
         alert('Booking failed, please try again.');
       }
     });
