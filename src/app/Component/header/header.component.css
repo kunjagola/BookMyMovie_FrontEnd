@@ -1,0 +1,110 @@
+/* Navbar styles */
+.navbar {
+  background-color: #6c757d; /* Secondary color */
+}
+
+.navbar-brand {
+  color: #ffffff; /* White text color */
+  font-size: 1.5rem;
+}
+
+.navbar-toggler {
+  border: none; /* Remove border from the toggler */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,...'); /* Replace with your toggler icon if needed */
+}
+
+.nav-link {
+  color: #ffffff; /* White text color for nav links */
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: #f8f9fa; /* Light gray color on hover */
+  cursor: pointer;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  background-color: #6c757d; /* Secondary color */
+  border: none; /* Remove border */
+}
+
+.dropdown-item {
+  color: #ffffff; /* White text color */
+}
+
+.dropdown-item:hover {
+  background-color: #495057; /* Darker gray on hover */
+}
+
+/* Profile circle styles */
+.navbar .dropdown-toggle img {
+  border: 2px solid #ffffff; /* Adds a border around the profile circle */
+  border-radius: 50%; /* Ensures the profile image is circular */
+}
+
+/* Search form styles */
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form .form-control {
+  border-radius: 20px; /* Rounded corners for the search input */
+}
+
+.btn-custom-search {
+  color: #ffffff; /* White text color */
+  background-color: rgb(178, 24, 24); /* Custom red background color */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Rounded corners */
+  margin-left: 10px; /* Space between input and button */
+}
+
+.btn-custom-search:hover {
+  background-color: rgb(150, 20, 20); /* Darker red on hover */
+}
+
+/* Profile circle styles */
+.profile-circle img {
+  border-radius: 50%; /* Ensures the profile image is circular */
+}
+
+.profile-circle .btn-secondary {
+  background-color: #6c757d; /* Secondary color */
+  border: none; /* Remove border */
+}
+
+.profile-circle .btn-secondary:hover {
+  background-color: #495057; /* Darker gray on hover */
+}
+
+/* Sign In button styles */
+.btn-primary {
+  background-color: rgb(150, 20, 20);
+  border: none; /* Remove border */
+  color: #ffffff; /* White text color */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.btn-primary:hover {
+  background-color: rgb(150, 20, 20);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  
+  .nav-link {
+    margin: 0.5rem 0;
+  }
+  
+  .dropdown-menu {
+    text-align: center;
+  }
+}

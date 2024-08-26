@@ -1,0 +1,213 @@
+
+.controls {
+  display: flex;
+  /* flex-direction: column;
+  align-items: flex-end; */
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* .movie-image{
+  
+} */
+
+/* Style for labels */
+.controls label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Style for the dropdown and datetime input */
+.controls select,
+.controls input[type="date"] {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px; /* Full width for better usability */
+  max-width: 300px; /* Limit width to ensure consistency */
+}
+
+/* Style for the button */
+.controls button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width for better usability */
+  max-width: 300px; /* Limit width to ensure consistency */
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+/* Container for theater and fare box */
+.theater-fare-container {
+  display: flex;
+  justify-content: space-between; /* Space between theater and fare box */
+  align-items: flex-start; /* Align items to the top */
+  margin: 20px;
+}
+
+/* Theater container styles */
+.theater-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px; /* Space between theater and fare box */
+}
+
+/* Screen styling */
+.screen {
+  width: 300px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  background-color: #333; /* Screen background color */
+  border: 3px solid #000; /* Border around the screen */
+  margin-bottom: 20px; /* Space between screen and seats */
+}
+
+/* Seat layout styling */
+.seat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Seat row styling */
+.row {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure seats are in a single row */
+  margin-bottom: 10px;
+}
+
+/* Seat styling */
+.seat {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid black; /* Add border to each seat */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Adjust font size to fit seat names */
+  text-align: center;
+  position: relative; /* Needed for absolute positioning of the tooltip */
+  background-color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Tooltip for seat name */
+.seat::after {
+  content: attr(data-name); /* Use the seat's name attribute */
+  position: absolute;
+  bottom: 100%; /* Position tooltip above the seat */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  visibility: hidden; /* Hide by default */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 10px;
+}
+
+.seat:hover::after {
+  visibility: visible; /* Show on hover */
+  opacity: 1;
+}
+
+/* Status classes */
+.available {
+  background-color: white;
+  border-color: #ccc; /* Border color for available seats */
+}
+
+.booked {
+  background-color: gray;
+  border-color: #666; /* Border color for booked seats */
+}
+
+.selected {
+  background-color: lightgreen;
+  color: white;
+  border-color: lightgreen; /* Border color for selected seats */
+}
+
+/* Margin between groups of seats, adjust if needed */
+.row > .seat:nth-child(5n) {
+  margin-right: 10px;
+}
+
+/* Ensure consistent margins */
+.row > .seat:nth-child(13n) {
+  margin-right: 0;
+}
+
+/* Fare box styling */
+.fare-box {
+  width: 300px; /* Adjust width as needed */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the fare box heading */
+.fare-box h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the fare box list of selected seats */
+.fare-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for fare box list items */
+.fare-box li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Style for total fare and button */
+.fare-box p, .fare-box button {
+  margin-top: 10px;
+}
+
+/* Style for the confirm booking button */
+.fare-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.fare-box button:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content:start; /* Centers the movie boxes horizontally */
+    gap: 20px; /* Adds space between the movie boxes */
+    padding: 20px; /* Adds padding around the container */
+}
+
+.movie-box {
+    width: 280px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.movie-link {
+    text-decoration: none; /* Removes the underline from the anchor text */
+    color: inherit; /* Inherits the color from the parent element (optional, if you want to keep the text color consistent) */
+  }
+  
+  .movie-link:hover {
+    text-decoration: none; /* Ensures that the underline is not shown on hover */
+  }
+
+.movie-image {
+    width: 100%;
+    height: auto;
+}
+
+.rating {
+    background-color: black;
+    color: #fff;
+    padding: 5px;
+    font-size: 14px;
+    font-weight:lighter;
+
+}
+
+.rating i{
+    color: red;
+}
+
+.movie-title {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}

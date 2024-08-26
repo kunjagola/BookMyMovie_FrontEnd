@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" *ngIf="!isLoggedIn" href="#">BookMyMovie</a>
+    <a class="navbar-brand" *ngIf="isLoggedIn" href="#">BookMyMovie</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" href="#">My Booking</a>
+        </li>
+      </ul>
+      <form class="d-flex me-2 search-form" role="search" *ngIf="isLoggedIn">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-custom-search" type="submit">Search</button>
+      </form>
+      <!-- Profile Circle -->
+      <div class="d-flex align-items-center" *ngIf="isLoggedIn">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle d-flex align-items-center" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="rounded-circle me-2" width="40" height="40">
+            <span class="d-none d-lg-inline">Hi, Guest</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+            <!-- <li><a class="dropdown-item" (click)="onProfileOptionSelect('Profile')">My Profile</a></li> -->
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="onProfileOptionSelect('Log Out')">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Sign In Button -->
+      <div class="d-flex align-items-center" *ngIf="!isLoggedIn">
+        <button class="btn btn-primary" (click)="onSignIn()">Sign In</button>
+      </div>
+    </div>
+  </div>
+</nav>

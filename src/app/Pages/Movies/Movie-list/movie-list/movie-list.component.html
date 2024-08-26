@@ -1,0 +1,15 @@
+<!-- <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head> -->
+<div class="body">
+    <div *ngFor="let movie of movies" class="movie-box">
+        <a [routerLink]="['/movie-detail', movie.MoviesID]" class="movie-link">
+            <img [src]="getMovieImage(movie.MovieName)" [alt]="movie.MovieName + ' Image'" class="movie-image" style="height: 200px; width: 300px;">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                {{movie.Rating}}/5
+            </div>
+            <div class="movie-title">{{ movie.MovieName }}</div>
+        </a>
+    </div>
+</div>

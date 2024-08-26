@@ -1,0 +1,51 @@
+<!-- Sign In Form -->
+<div *ngIf="isSignInForm" class="compact-form">
+  <h1 class="form-title">Sign In</h1>
+  <form [formGroup]="form" class="form-content">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" class="form-input" placeholder="Enter your email">
+
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" class="form-input" placeholder="Enter your password">
+
+    <div class="form-actions">
+      <button type="button" class="form-button" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="form-button" (click)="onSubmit()">Submit</button>
+      <button type="button" class="form-button" (click)="registerHereFromOpen()">Register Here</button>
+    </div>
+  </form>
+</div>
+
+<!-- Registration Form -->
+<div *ngIf="isRegistrationForm" class="compact-form">
+  <h1 class="form-title">Registration</h1>
+  <form [formGroup]="form" class="form-content">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" class="form-input" placeholder="Enter your email">
+
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" class="form-input" placeholder="Enter your password">
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input id="confirmPassword" type="password" formControlName="confirmPassword" class="form-input" placeholder="Confirm your password">
+
+    <label for="dob">Date of Birth</label>
+    <input id="dob" type="date" formControlName="dob" class="form-input">
+
+    <!-- <label for="city">City</label>
+    <select id="city" formControlName="city" class="form-input">
+      <option value="">Select City</option>
+      <option value="city1">City 1</option>
+      <option value="city2">City 2</option>
+    </select> -->
+
+    <label for="age">Age</label>
+    <input id="age" type="number" formControlName="age" class="form-input" placeholder="Enter your age">
+   
+    <div class="form-actions">
+      <button type="button" class="form-button" (click)="onCancel()">Cancel</button>
+      <button type="submit" class="form-button" (click)="onSubmit()">Submit</button>
+      <button type="button" class="form-button" (click)="signInHereFromOpen()">Sign In Here</button>
+    </div>
+  </form>
+</div>

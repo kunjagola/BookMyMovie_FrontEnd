@@ -1,0 +1,52 @@
+<div class="controls">
+  <div class="movie-image">
+    <img [src]="getMovieImage()" class="movie-image" style="height: 300px; width: 400px;">
+  </div>
+  <form [formGroup]="form" (ngSubmit)="fetchSeats()">
+    <label for="auditorium">Select Auditorium:</label>
+    <select id="auditorium" formControlName="auditorium">
+      <option *ngFor="let auditorium of auditoriums" [value]="auditorium.id">
+        {{ auditorium.name }}
+      </option>
+    </select>
+
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" formControlName="date" (ngModelChange)="fetchTimes()">
+
+    <label for="time">Select Time:</label>
+    <select id="time" formControlName="time">
+      <option *ngFor="let time of times" [value]="time">
+        {{ time }}
+      </option>
+    </select>
+
+    <button type="submit">Fetch Seats</button>
+  </form>
+</div>
+
+<div class="theater-fare-container">
+  <div class="theater-container" *ngIf="seats.length > 0">
+    <div class="screen"></div>
+    <div class="seat-container">
+      <div class="row" *ngFor="let row of seats; let rowIndex = index">
+        <div *ngFor="let seat of row; let seatIndex = index"
+             [ngClass]="getSeatClass(seat, rowIndex, seatIndex)"
+             (click)="toggleSeat(rowIndex, seatIndex)"
+             [attr.data-name]="seat.seatNumber">
+          {{ seat.seatNumber }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fare-box" *ngIf="selectedSeats.length > 0">
+    <h3>Selected Seats</h3>
+    <ul>
+      <li *ngFor="let seat of selectedSeats">
+        Row {{ seat.rowNumber }}, Seat {{ seat.seatNumber }}
+      </li>
+    </ul>
+    <p>Total Fare: {{ totalFare | currency:'INR':'symbol':'1.0-0' }}</p>
+    <button (click)="confirmBooking()">Confirm Booking</button>
+  </div>
+</div>
